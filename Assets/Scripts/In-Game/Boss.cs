@@ -21,21 +21,17 @@ public class Boss : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
+        HIT.interactable = false;
         control = Controller.GetComponent<VJController>();
         gameObject.GetComponent<RectTransform>().localPosition = new Vector3(
         Random.Range(spwanArea.GetComponent<RectTransform>().rect.xMin, spwanArea.GetComponent<RectTransform>().rect.xMax),
-        Random.Range(-50, 150), 0);
-        HIT.interactable = false;
-
-        Debug.Log(spwanArea.GetComponent<RectTransform>().rect.xMin);
-        Debug.Log(spwanArea.GetComponent<RectTransform>().rect.xMax);
-        Debug.Log(gameObject.GetComponent<RectTransform>().localPosition);
+        Random.Range(-300, 400), 0);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        Hori.GetComponent<RectTransform>().localPosition = new Vector3(0, Mathf.Clamp(Hori.GetComponent<RectTransform>().localPosition.y + control.GetY(), spwanArea.GetComponent<RectTransform>().rect.yMin, spwanArea.GetComponent<RectTransform>().rect.yMax), 0);
+        Hori.GetComponent<RectTransform>().localPosition = new Vector3(0, Mathf.Clamp(Hori.GetComponent<RectTransform>().localPosition.y + control.GetY(), -300, 400), 0);
         Verti.GetComponent<RectTransform>().localPosition = new Vector3(Mathf.Clamp(Verti.GetComponent<RectTransform>().localPosition.x + control.GetX(), spwanArea.GetComponent<RectTransform>().rect.xMin, spwanArea.GetComponent<RectTransform>().rect.xMax), 0, 0);
         xPosition = Verti.GetComponent<RectTransform>().localPosition.x;
         yPosition = Hori.GetComponent<RectTransform>().localPosition.y;
