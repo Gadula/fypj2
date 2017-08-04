@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneChange : MonoBehaviour
 {
@@ -29,12 +30,18 @@ public class SceneChange : MonoBehaviour
 
     public void goToEnd()
     {
+        if (Scoring.CurrentScore > Scoring.GetHighScore)
+        {
+            Scoring.Write(Scoring.CurrentScore);
+            Scoring.Read();
+            Facebook.Unity.FB.API("me/scores", Facebook.Unity.HttpMethod.POST);
+        }
         SceneManager.LoadScene("End");
     }
 
     public void goToScore()
     {
-        SceneManager.LoadScene("Score");
+        SceneManager.LoadScene("Leaderboard");
     }
 
     public void goToFight()

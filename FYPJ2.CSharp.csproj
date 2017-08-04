@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{87AA5C55-FC10-D422-C9B4-63DE01CDD12B}</ProjectGuid>
+    <ProjectGuid>{BE04F32F-CFF3-49CE-9141-452A17F2B1BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -73,17 +73,72 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Facebook.Unity">
+      <HintPath>Assets\FacebookSDK\Plugins\Facebook.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Gameroom">
+      <HintPath>Assets\FacebookSDK\Plugins\Gameroom\Facebook.Unity.Gameroom.dll</HintPath>
+    </Reference>
+    <Reference Include="FacebookNamedPipeClient">
+      <HintPath>Assets\FacebookSDK\Plugins\Gameroom\FacebookNamedPipeClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>Assets\FacebookSDK\Plugins\Settings\Facebook.Unity.Settings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\In-Game\Boss.cs" />
-    <Compile Include="Assets\Scripts\In-Game\Compass.cs" />
-    <Compile Include="Assets\Scripts\In-Game\Enemy.cs" />
-    <Compile Include="Assets\Scripts\In-Game\Horizon.cs" />
-    <Compile Include="Assets\Scripts\In-Game\Radar.cs" />
-    <Compile Include="Assets\Scripts\In-Game\Scoring.cs" />
-    <Compile Include="Assets\Scripts\In-Game\VJController.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdHandler.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdManager.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdPanel.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdQuad.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdSettings.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdUtility.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\AdView.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\InterstitialAd.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\NativeAd.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\RewardedVideoAd.cs" />
+    <Compile Include="Assets\AudienceNetwork\Library\SdkVersion.cs" />
+    <Compile Include="Assets\AudienceNetwork\Samples\Banner\AdViewTest.cs" />
+    <Compile Include="Assets\AudienceNetwork\Samples\InGameAd\AdCamera.cs" />
+    <Compile Include="Assets\AudienceNetwork\Samples\InGameAd\SimpleTouchPad.cs" />
+    <Compile Include="Assets\AudienceNetwork\Samples\Interstitial\InterstitialAdTest.cs" />
+    <Compile Include="Assets\AudienceNetwork\Samples\NativeAd\NativeAdTest.cs" />
+    <Compile Include="Assets\AudienceNetwork\Samples\RewardedVideo\RewardedVideoAdTest.cs" />
+    <Compile Include="Assets\FBScript.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\LogView.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\MenuBase.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AccessTokenMenu.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppEvents.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppInvites.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppLinks.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\DialogShare.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\MainMenu.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Game Component\Boss.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Game Component\Compass.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Game Component\Enemy.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Game Component\Horizon.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Game Component\Level.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Game Component\Radar.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Game Component\VJController.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Score System\DisplayHighScore.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Score System\DisplayScore.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Score System\Ranking.cs" />
+    <Compile Include="Assets\Scripts\In-Game\Score System\Scoring.cs" />
     <Compile Include="Assets\Scripts\SceneChange.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Splash.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AudienceNetwork\Audience Network README.txt" />
+    <None Include="Assets\AudienceNetwork\Editor\Android\DefaultAndroidManifest.xml" />
+    <None Include="Assets\FacebookSDK\link.xml" />
+    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver.txt" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\StreamingAssets\Highscore.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
